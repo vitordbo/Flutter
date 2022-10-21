@@ -26,6 +26,6 @@ class User {
   User(this.name, this.age);
 
   void apresenta() {
-    print("My name is $name e tenho $age anos");
+    print("My name is $name and my age $age");
   }
 }
