@@ -4,28 +4,28 @@ void main() {
     User('Pedro', 25)
   ]; // creating a list of User
 
-  print(users[0].nome); // show using index
-  print(users[0].idade);
+  print(users[0].name); // show using index
+  print(users[0].age);
 
-  print(users[users.length - 1].nome); // show last using length
-  print(users[users.length - 1].idade);
+  print(users[users.length - 1].name); // show last using length
+  print(users[users.length - 1].age);
 
   users.add(User('Maria', 27)); // using add
 
   print("-------------------------------");
-  users.forEach((User pessoa) => print(pessoa.nome)); // to show all
+  users.forEach((User pessoa) => print(pessoa.name)); // to show all
 
   users.removeAt(0);
   print("-------------------------------");
-  users.forEach((User pessoa) => print(pessoa.nome)); // to show all
+  users.forEach((User pessoa) => print(pessoa.name)); // to show all
 }
 
 class User {
-  String nome;
-  int idade;
-  User(this.nome, this.idade);
+  String name;
+  int age;
+  User(this.name, this.age);
 
   void apresenta() {
-    print("Meu nome é Snome e tenho $idade anos");
+    print("My name is $name e tenho $age anos");
   }
 }
