@@ -37,4 +37,36 @@ void main(List<String> args) {
   }
 
   double gradeAverage = (firstGrade + secondGrade + thirdGrade) / 3;
+  print("");
+  print("Sua média foi ${gradeAverage.toStringAsFixed(2)}");
+
+  if (gradeAverage >= 7) {
+    print("\nParabéns! Você foi aprovado!");
+  } else if (gradeAverage >= 3 && gradeAverage <= 7) {
+    print("\nOpa, voce esta de recuperação");
+    recuperacao(gradeAverage);
+  } else if (gradeAverage <= 3) {
+    print("\nVoce esta reprovado");
+  }
+}
+
+void recuperacao(double average) {
+  // media final maior que 5
+  // mp * 6 + mf * 4 / 10 = 50
+
+  print("Digite quanto quer tirar na quarta prova: ");
+
+  double? finalGrade =
+      double.tryParse(stdin.readLineSync()!); // ? => could be null
+
+  double finalGradeCount = (average * 6) + (finalGrade! * 4);
+  finalGradeCount = finalGradeCount / 10;
+
+  print("Sua média final foi ${finalGradeCount.toStringAsFixed(2)}");
+
+  if (finalGradeCount >= 5) {
+    print("\nParabéns, voce passou!");
+  } else {
+    print("\nTriste fim, voce reprovou!");
+  }
 }
